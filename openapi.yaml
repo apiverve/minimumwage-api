@@ -1,0 +1,75 @@
+openapi: 3.0.4
+info:
+  title: Minimum Wage
+  description: >-
+    Minimum Wage provides current minimum wage rates for all US states plus the
+    federal minimum. Includes tipped minimum wages, effective rates (higher of
+    state or federal), and historical federal minimum wage data.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/minimumwage:
+    get:
+      summary: Get Minimum Wage
+      description: Get minimum wage rates for all states or a specific state
+      operationId: minimumwage
+      parameters:
+        - name: state
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Optional 2-letter state code (e.g., CA, NY). Omit for all states.
+          example: CA
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  state: CA
+                  stateName: California
+                  minimumWage: 16
+                  stateRate: 16
+                  federalRate: 7.25
+                  tippedMinimum: 16
+                  usesFederalRate: false
+                  note: null
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
