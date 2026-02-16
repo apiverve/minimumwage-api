@@ -223,8 +223,9 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient
 
 api = MinimumwageAPIClient("[YOUR_API_KEY]")
 
+query = { "state": "CA" }
+
 try:
-    query = { "state": "CA" }
     result = api.execute(query)
     print(result)
 finally:
