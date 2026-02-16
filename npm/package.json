@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/minimumwage",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Minimum Wage provides current minimum wage rates for all US states plus the federal minimum. Includes tipped minimum wages, effective rates (higher of state or federal), and historical federal minimum wage data.",
   "main": "index.js",
   "types": "index.d.ts",
