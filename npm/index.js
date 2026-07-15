@@ -30,7 +30,7 @@ class minimumwageWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/minimumwage';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"state":{"type":"string","required":false,"minLength":2,"maxLength":2}};
+        this.validationRules = {"state":{"type":"string","required":true,"minLength":2,"maxLength":2},"year":{"type":"number","required":false}};
     }
 
     /**
