@@ -60,7 +60,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  state: "CA"
+  state: "CA",
+  year: 2024
 };
 
 api.execute(query, function (error, data) {
@@ -80,7 +81,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  state: "CA"
+  state: "CA",
+  year: 2024
 };
 
 api.execute(query)
@@ -101,7 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  state: "CA"
+  state: "CA",
+  year: 2024
 };
 
     try {
@@ -129,7 +132,14 @@ async function makeRequest() {
     "federalRate": 7.25,
     "tippedMinimum": 16,
     "usesFederalRate": false,
-    "note": null
+    "aboveFederal": true,
+    "federalDifference": 8.75,
+    "annualIncome40hrs": 33280,
+    "note": null,
+    "formatted": {
+      "minimumWage": "$16.00/hr",
+      "annualIncome": "$33,280.00"
+    }
   }
 }
 ```
