@@ -27,9 +27,16 @@ paths:
           in: query
           schema:
             type: string
-          required: false
-          description: Optional 2-letter state code (e.g., CA, NY). Omit for all states.
+          required: true
+          description: 2-letter state code (e.g., CA, NY)
           example: CA
+        - name: year
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Year to get minimum wage for (e.g., 2020). Defaults to current year.
+          example: 2024
       responses:
         '200':
           description: Successful Response
@@ -58,7 +65,13 @@ paths:
                   federalRate: 7.25
                   tippedMinimum: 16
                   usesFederalRate: false
+                  aboveFederal: true
+                  federalDifference: 8.75
+                  annualIncome40hrs: 33280
                   note: null
+                  formatted:
+                    minimumWage: $16.00/hr
+                    annualIncome: $33,280.00
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
