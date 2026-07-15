@@ -15,7 +15,8 @@ const api = new minimumwageAPI({
 
 // Example query
 var query = {
-  state: "CA"
+  state: "CA",
+  year: 2024
 };
 
 // Make the API request using callback
