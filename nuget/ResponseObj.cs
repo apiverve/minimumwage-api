@@ -25,6 +25,9 @@ namespace APIVerve.API.MinimumWage
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,21 +39,54 @@ namespace APIVerve.API.MinimumWage
         public string StateName { get; set; }
 
         [JsonProperty("minimumWage")]
-        public long MinimumWage { get; set; }
+        public long? MinimumWage { get; set; }
 
         [JsonProperty("stateRate")]
-        public long StateRate { get; set; }
+        public long? StateRate { get; set; }
 
         [JsonProperty("federalRate")]
-        public double FederalRate { get; set; }
+        public double? FederalRate { get; set; }
 
         [JsonProperty("tippedMinimum")]
-        public long TippedMinimum { get; set; }
+        public long? TippedMinimum { get; set; }
 
         [JsonProperty("usesFederalRate")]
-        public bool UsesFederalRate { get; set; }
+        public bool? UsesFederalRate { get; set; }
+
+        [JsonProperty("aboveFederal")]
+        public bool? AboveFederal { get; set; }
+
+        [JsonProperty("federalDifference")]
+        public double? FederalDifference { get; set; }
+
+        [JsonProperty("annualIncome40hrs")]
+        public long? AnnualIncome40Hrs { get; set; }
 
         [JsonProperty("note")]
         public object Note { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("minimumWage")]
+        public string MinimumWage { get; set; }
+
+        [JsonProperty("annualIncome")]
+        public string AnnualIncome { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
