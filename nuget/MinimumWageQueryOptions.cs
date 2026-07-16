@@ -11,9 +11,15 @@ namespace APIVerve.API.MinimumWage
     public class MinimumWageQueryOptions
     {
         /// <summary>
-        /// Optional 2-letter state code (e.g., CA, NY). Omit for all states.
+        /// 2-letter state code (e.g., CA, NY)
         /// </summary>
         [JsonProperty("state")]
         public string State { get; set; }
+
+        /// <summary>
+        /// Year to get minimum wage for (e.g., 2020). Defaults to current year.
+        /// </summary>
+        [JsonProperty("year")]
+        public double? Year { get; set; }
     }
 }
