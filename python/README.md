@@ -3,11 +3,10 @@ Minimum Wage API
 
 Minimum Wage provides current minimum wage rates for all US states plus the federal minimum. Includes tipped minimum wages, effective rates (higher of state or federal), and historical federal minimum wage data.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Minimum Wage API](https://apiverve.com/marketplace/minimumwage?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-minimumwage.svg)](https://pypi.org/project/apiverve-minimumwage/)
+
+This is a Python wrapper for the [Minimum Wage API](https://apiverve.com/marketplace/minimumwage?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-minimumwage
 
 ## Configuration
 
-Before using the minimumwage API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Minimum Wage API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -44,7 +43,10 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient
 # Initialize the client with your APIVerve API key
 api = MinimumwageAPIClient("[YOUR_API_KEY]")
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 try:
     # Make the API call
@@ -60,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Minimum Wage API documentation is found here: [https://docs.apiverve.com/ref/minimumwage](https://docs.apiverve.com/ref/minimumwage?utm_source=pypi&utm_medium=readme).
+The Minimum Wage API documentation is found here: [https://docs.apiverve.com/ref/minimumwage](https://docs.apiverve.com/ref/minimumwage?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -82,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 ```
 
 ###### Simple Request
@@ -104,12 +109,20 @@ print(result)
   "data": {
     "state": "CA",
     "stateName": "California",
-    "minimumWage": 16,
-    "stateRate": 16,
+    "year": 2026,
+    "minimumWage": 16.9,
+    "stateRate": 16.9,
     "federalRate": 7.25,
-    "tippedMinimum": 16,
+    "tippedMinimum": null,
     "usesFederalRate": false,
-    "note": null
+    "aboveFederal": true,
+    "federalDifference": 9.65,
+    "annualIncome40hrs": 35152,
+    "note": null,
+    "formatted": {
+      "minimumWage": "$16.90/hr",
+      "annualIncome": "$35,152.00"
+    }
   }
 }
 ```
@@ -127,7 +140,10 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient, MinimumwageAPIC
 
 api = MinimumwageAPIClient("[YOUR_API_KEY]")
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -148,7 +164,10 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient, MinimumwageAPIC
 
 api = MinimumwageAPIClient("[YOUR_API_KEY]")
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -182,7 +201,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_minimumwage.apiClient import MinimumwageAPIClient, MinimumwageAPIClientError
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 # Using context manager ensures proper cleanup
 with MinimumwageAPIClient("[YOUR_API_KEY]") as api:
@@ -208,7 +230,10 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient
 # Enable debug mode
 api = MinimumwageAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -223,7 +248,10 @@ from apiverve_minimumwage.apiClient import MinimumwageAPIClient
 
 api = MinimumwageAPIClient("[YOUR_API_KEY]")
 
-query = { "state": "CA" }
+query = {
+    "state": "CA",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -237,7 +265,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -248,12 +276,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

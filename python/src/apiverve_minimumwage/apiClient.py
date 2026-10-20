@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,8 @@ class ValidationError(MinimumwageAPIClientError):
 class MinimumwageAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "state": {"type": "string", "required": False, "minLength": 2, "maxLength": 2}
+        "state": {"type": "string", "required": True, "minLength": 2, "maxLength": 2},
+        "year": {"type": "number", "required": False}
     }
 
     # Format validation patterns
