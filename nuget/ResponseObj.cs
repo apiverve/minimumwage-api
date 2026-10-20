@@ -38,17 +38,20 @@ namespace APIVerve.API.MinimumWage
         [JsonProperty("stateName")]
         public string StateName { get; set; }
 
+        [JsonProperty("year")]
+        public long? Year { get; set; }
+
         [JsonProperty("minimumWage")]
-        public long? MinimumWage { get; set; }
+        public double? MinimumWage { get; set; }
 
         [JsonProperty("stateRate")]
-        public long? StateRate { get; set; }
+        public double? StateRate { get; set; }
 
         [JsonProperty("federalRate")]
         public double? FederalRate { get; set; }
 
         [JsonProperty("tippedMinimum")]
-        public long? TippedMinimum { get; set; }
+        public object TippedMinimum { get; set; }
 
         [JsonProperty("usesFederalRate")]
         public bool? UsesFederalRate { get; set; }

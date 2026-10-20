@@ -1,13 +1,12 @@
-MinimumWage API
+Minimum Wage API
 ============
 
 Minimum Wage provides current minimum wage rates for all US states plus the federal minimum. Includes tipped minimum wages, effective rates (higher of state or federal), and historical federal minimum wage data.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [MinimumWage API](https://apiverve.com/marketplace/minimumwage?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MinimumWage.svg)](https://www.nuget.org/packages/APIVerve.API.MinimumWage)
+
+This is a .NET wrapper for the [Minimum Wage API](https://apiverve.com/marketplace/minimumwage?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the minimumwage API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Minimum Wage API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,9 +60,9 @@ class Program
         var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MinimumWageQueryOptions {
-    State = "CA",
-    Year = 2024
-};
+            State = "CA",
+            Year = 2024
+        };
 
         // Make the API call
         try
@@ -93,13 +92,13 @@ class Program
 
 ## Usage
 
-The MinimumWage API documentation is found here: [https://docs.apiverve.com/ref/minimumwage](https://docs.apiverve.com/ref/minimumwage?utm_source=nuget&utm_medium=readme).
+The Minimum Wage API documentation is found here: [https://docs.apiverve.com/ref/minimumwage](https://docs.apiverve.com/ref/minimumwage?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-MinimumWage API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Minimum Wage API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -126,9 +125,9 @@ public class Example
         var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MinimumWageQueryOptions {
-    State = "CA",
-    Year = 2024
-};
+            State = "CA",
+            Year = 2024
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -159,9 +158,9 @@ public class Example
         var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MinimumWageQueryOptions {
-    State = "CA",
-    Year = 2024
-};
+            State = "CA",
+            Year = 2024
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -197,9 +196,9 @@ public class Example
         var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MinimumWageQueryOptions {
-    State = "CA",
-    Year = 2024
-};
+            State = "CA",
+            Year = 2024
+        };
 
         try
         {
@@ -254,9 +253,9 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new MinimumWageQueryOptions {
-    State = "CA",
-    Year = 2024
-};
+            State = "CA",
+            Year = 2024
+        };
 
         try
         {
@@ -378,18 +377,19 @@ using (var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]"))
   "data": {
     "state": "CA",
     "stateName": "California",
-    "minimumWage": 16,
-    "stateRate": 16,
+    "year": 2026,
+    "minimumWage": 16.9,
+    "stateRate": 16.9,
     "federalRate": 7.25,
-    "tippedMinimum": 16,
+    "tippedMinimum": null,
     "usesFederalRate": false,
     "aboveFederal": true,
-    "federalDifference": 8.75,
-    "annualIncome40hrs": 33280,
+    "federalDifference": 9.65,
+    "annualIncome40hrs": 35152,
     "note": null,
     "formatted": {
-      "minimumWage": "$16.00/hr",
-      "annualIncome": "$33,280.00"
+      "minimumWage": "$16.90/hr",
+      "annualIncome": "$35,152.00"
     }
   }
 }
@@ -399,7 +399,7 @@ using (var apiClient = new MinimumWageAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -410,12 +410,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
