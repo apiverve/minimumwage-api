@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/minimumwage",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Minimum Wage provides current minimum wage rates for all US states plus the federal minimum. Includes tipped minimum wages, effective rates (higher of state or federal), and historical federal minimum wage data.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/minimumwage-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/minimumwage?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/minimumwage?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",

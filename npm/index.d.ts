@@ -27,10 +27,11 @@ declare module '@apiverve/minimumwage' {
   interface MinimumWageData {
       state:             null | string;
       stateName:         null | string;
+      year:              number | null;
       minimumWage:       number | null;
       stateRate:         number | null;
       federalRate:       number | null;
-      tippedMinimum:     number | null;
+      tippedMinimum:     null;
       usesFederalRate:   boolean | null;
       aboveFederal:      boolean | null;
       federalDifference: number | null;
