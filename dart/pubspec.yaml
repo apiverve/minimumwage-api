@@ -1,6 +1,6 @@
 name: apiverve_minimumwage
 description: "Minimum Wage provides current minimum wage rates for all US states plus the federal minimum. Includes tipped minimum wages, effective rates (higher of state or federal), and historical federal minimum wage data."
-version: 1.2.5
+version: 1.2.6
 homepage: https://apiverve.com/marketplace/minimumwage?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/minimumwage-api/tree/main/dart
 
